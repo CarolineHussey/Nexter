@@ -18,6 +18,8 @@ $font-display: "Josefin Sans", sans-serif;
 $bp-largest: 75em; //1200px;
 $bp-large: 62.5em; //1000px;
 $bp-medium: 50em; //800px;
+$bp-small: 37.5em; //600px;
+$bp-smallest: 31.25em; //500px;
 
 *,
 *::before,
@@ -69,7 +71,10 @@ body {
 
   @media only screen and (max-width: $bp-medium) {
     grid-template-rows:
-      6rem calc(100vh - 6rem) repeat(3, minmax(min-content, 40vw))
+      6rem calc(100vh - 6rem) minmax(min-content, 30vw) repeat(
+        2,
+        minmax(min-content, 40vw)
+      )
       repeat(3, min-content);
     grid-template-columns:
       [full-start] minmax(6rem, 1fr)
